@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"reflect"
-	"fmt"
 )
 
 // ShoutcastAdapter adapts into icecast data, to get the source info.
@@ -27,9 +26,6 @@ func (ia ShoutcastAdapter) Compare(prev []byte, body []byte) bool {
 
 	json.Unmarshal(prev, &p)
 	json.Unmarshal(body, &b)
-
-	fmt.Println(p)
-	fmt.Println(b)
 
 	return reflect.DeepEqual(p, b)
 }

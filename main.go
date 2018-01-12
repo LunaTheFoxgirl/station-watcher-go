@@ -39,8 +39,6 @@ func main() {
 	var previousResult []byte = nil
 
 	for {
-		fmt.Println("Polling remote URL...")
-
 		resp, err := http.Get(watchUri)
 		if err != nil {
 			fmt.Println("Connnection error for uri", "<"+watchUri+">", err.Error())
