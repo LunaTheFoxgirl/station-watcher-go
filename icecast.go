@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/xml"
 	"reflect"
-	"fmt"
 )
 
 // IcecastAdapter adapts into icecast data, to get the source info.

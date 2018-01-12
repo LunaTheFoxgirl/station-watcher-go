@@ -5,7 +5,7 @@ A single-purpose application that monitors ShoutCast and IceCast instances and c
 
 ```
 docker-compose build
-docker-compose run go go-wrapper run {adapter} {metadata_uri} {report_uri}
+docker-compose run go go-wrapper install
 ```
 
 ### Example URIs

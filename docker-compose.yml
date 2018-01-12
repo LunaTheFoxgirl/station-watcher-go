@@ -6,4 +6,5 @@ services:
       context: .
     volumes:
       - .:/go/src/app
+      - ./build:/go/bin
     network_mode: host
