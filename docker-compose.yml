@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  go:
+    build:
+      context: .
+    volumes:
+      - .:/go/src/app
+    network_mode: host
