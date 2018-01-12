@@ -10,9 +10,7 @@ type IcecastAdapter struct {}
 
 // IcecastStat contains an slice of sources.
 type IcecastStat struct {
-	Stat struct {
-		Sources []IcecastSource `xml:"source"`
-	} `xml:"icestats"`
+	Sources []IcecastSource `xml:"source"`
 }
 
 // IcecastSource is source data for an icecast stream.
@@ -22,7 +20,7 @@ type IcecastSource struct {
 }
 
 // Compare compares prev against body.
-func (ia IcecastAdapter) Compare(prev, body []byte) bool {
+func (ia IcecastAdapter) Compare(prev []byte, body []byte) bool {
 	var p IcecastStat
 	var b IcecastStat
 

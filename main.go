@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+	"io/ioutil"
+	"bytes"
 )
 
-const usage string = "<adapter> <watch uri> <report ui>"
+const usage string = "<adapter> <watch uri> <report uri>"
 
 func main() {
 	//Fetch start arguments.
@@ -34,7 +36,8 @@ func main() {
 	}
 
 	adapter := adapters[adapterName]
-	var previousResult *http.Response = nil
+	var previousResult []byte = nil
+
 	for {
 		resp, err := http.Get(watchUri)
 		if err != nil {
@@ -44,18 +47,16 @@ func main() {
 		}
 
 		if resp.StatusCode == http.StatusOK {
+			newResult, _ := ioutil.ReadAll(resp.Body);
+
 			if previousResult == nil {
-				triggerEvent(reportUri, resp)
+				triggerEvent(reportUri, newResult)
 			} else {
-				pr := make([]byte, previousResult.ContentLength)
-				r := make([]byte, resp.ContentLength)
-				previousResult.Body.Read(pr)
-				resp.Body.Read(r)
-				changed := adapter.Compare(pr, r)
-				if changed { triggerEvent(reportUri, resp) }
+				responsesMatch := adapter.Compare(previousResult, newResult)
+				if !responsesMatch { triggerEvent(reportUri, newResult) }
 			}
 
-			previousResult = resp
+			previousResult = newResult
 		} else {
 			fmt.Println("Request url", "<"+watchUri+">", "returned", resp.Status)
 		}
@@ -64,8 +65,12 @@ func main() {
 	}
 }
 
-func triggerEvent(reportUri string, response *http.Response) {
-	resp, err := http.Post(reportUri, "text/plain", response.Body)
+func triggerEvent(reportUri string, response []byte) {
+
+	fmt.Println("Change in content: triggering web hook")
+
+	responseReader := ioutil.NopCloser(bytes.NewBuffer(response))
+	resp, err := http.Post(reportUri, "text/plain", responseReader)
 	if err != nil || resp.StatusCode != http.StatusOK {
 		if err != nil {
 			fmt.Println("Error:", err.Error())
@@ -75,6 +80,7 @@ func triggerEvent(reportUri string, response *http.Response) {
 		fmt.Println("Webhook returned response", resp.Status, "verify API key.")
 		time.Sleep(15 * time.Second)
 	}
+
 	return
 }
 

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<icestats>
+  <admin>icemaster@localhost</admin>
+  <banned_IPs>0</banned_IPs>
+  <build>20171020014152</build>
+  <client_connections>11</client_connections>
+  <clients>1</clients>
+  <connections>12</connections>
+  <file_connections>0</file_connections>
+  <host>demo.azuracast.com</host>
+  <listener_connections>0</listener_connections>
+  <listeners>0</listeners>
+  <location>AzuraCast</location>
+  <outgoing_kbitrate>14</outgoing_kbitrate>
+  <server_id>Icecast 2.4.0-kh7</server_id>
+  <server_start>03/Nov/2017:01:26:43 +0000</server_start>
+  <source_client_connections>1</source_client_connections>
+  <source_relay_connections>0</source_relay_connections>
+  <source_total_connections>1</source_total_connections>
+  <sources>1</sources>
+  <stats>0</stats>
+  <stats_connections>0</stats_connections>
+  <stream_kbytes_read>106</stream_kbytes_read>
+  <stream_kbytes_sent>0</stream_kbytes_sent>
+  <source mount="/radio.mp3">
+    <artist>RW Smith</artist>
+    <audio_codecid>2</audio_codecid>
+    <audio_info>channels=2;samplerate=44100;bitrate=128</audio_info>
+    <bitrate>128</bitrate>
+    <connected>8</connected>
+    <genre>various</genre>
+    <incoming_bitrate>125312</incoming_bitrate>
+    <listener_connections>0</listener_connections>
+    <listener_peak>0</listener_peak>
+    <listeners>0</listeners>
+    <listenurl>http://demo.azuracast.com:8000/radio.mp3</listenurl>
+    <max_listeners>-1</max_listeners>
+    <metadata_updated>03/Nov/2017:01:26:44 +0000</metadata_updated>
+    <mpeg_channels>2</mpeg_channels>
+    <mpeg_samplerate>44100</mpeg_samplerate>
+    <outgoing_kbitrate>0</outgoing_kbitrate>
+    <public>0</public>
+    <queue_size>65202</queue_size>
+    <server_description>A test radio station.</server_description>
+    <server_name>AzuraTest Radio</server_name>
+    <server_type>audio/mpeg</server_type>
+    <server_url>demo.azuracast.com</server_url>
+    <slow_listeners>0</slow_listeners>
+    <source_ip>127.0.0.1</source_ip>
+    <stream_start>03/Nov/2017:01:26:43 +0000</stream_start>
+    <title>For All You Know</title>
+    <total_bytes_read>109650</total_bytes_read>
+    <total_bytes_sent>0</total_bytes_sent>
+    <total_mbytes_sent>0</total_mbytes_sent>
+    <user_agent>Liquidsoap/1.3.3 (Unix; OCaml 4.02.3)</user_agent>
+    <yp_currently_playing>RW Smith - For All You Know</yp_currently_playing>
+  </source>
+</icestats>

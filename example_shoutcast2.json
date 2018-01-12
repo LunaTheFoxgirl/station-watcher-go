@@ -1,0 +1,38 @@
+{
+    "totalstreams": 1,
+    "activestreams": 1,
+    "currentlisteners": 0,
+    "peaklisteners": 0,
+    "maxlisteners": 250,
+    "uniquelisteners": 0,
+    "averagetime": 0,
+    "version": "2.5.1.724 (posix(linux x64))",
+    "streams": [
+        {
+            "id": 1,
+            "currentlisteners": 0,
+            "peaklisteners": 0,
+            "maxlisteners": 250,
+            "uniquelisteners": 0,
+            "averagetime": 0,
+            "servergenre": "Misc",
+            "servergenre2": "",
+            "servergenre3": "",
+            "servergenre4": "",
+            "servergenre5": "",
+            "serverurl": "docker.local",
+            "servertitle": "AzuraTest Radio",
+            "songtitle": "Solar Fields - Sol",
+            "streamhits": 0,
+            "streamstatus": 1,
+            "backupstatus": 0,
+            "streamlisted": 0,
+            "streamlistederror": 200,
+            "streampath": "/radio.mp3",
+            "streamuptime": 4294,
+            "bitrate": "128",
+            "samplerate": "44100",
+            "content": "audio/mpeg"
+        }
+    ]
+}
