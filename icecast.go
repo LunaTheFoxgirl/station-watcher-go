@@ -20,7 +20,7 @@ type IcecastSource struct {
 }
 
 // Compare compares prev against body.
-func (ia IcecastAdapter) Compare(prev []byte, body []byte) bool {
+func (ia IcecastAdapter) Compare(prev, body []byte) bool {
 	var p IcecastStat
 	var b IcecastStat
 

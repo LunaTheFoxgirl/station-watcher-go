@@ -75,7 +75,7 @@ func main() {
 	}
 }
 
-func initLogger(infoHandle io.Writer, errorHandle io.Writer) {
+func initLogger(infoHandle, errorHandle io.Writer) {
 	Info = log.New(infoHandle, "",
 		log.Ldate|log.Ltime|log.Lshortfile)
 

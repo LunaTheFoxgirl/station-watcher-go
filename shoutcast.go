@@ -20,7 +20,7 @@ type ShoutcastStream struct {
 }
 
 // Compare compares prev against body.
-func (ia ShoutcastAdapter) Compare(prev []byte, body []byte) bool {
+func (ia ShoutcastAdapter) Compare(prev, body []byte) bool {
 	var p ShoutcastStat
 	var b ShoutcastStat
 
